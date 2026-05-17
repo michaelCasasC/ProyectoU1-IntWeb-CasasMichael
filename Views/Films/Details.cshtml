@@ -1,0 +1,15 @@
+﻿@model SakilaApp.Models.Film
+
+<h1>@Model.Title</h1>
+
+<div class="card">
+    <div class="card-body">
+        <p><strong>ID:</strong> @Model.FilmId</p>
+        <p><strong>Año:</strong> @Model.ReleaseYear</p>
+        <p><strong>Duración:</strong> @Model.Length minutos</p>
+        <p><strong>Calificación:</strong> @Model.Rating</p>
+        <p><strong>Descripción:</strong> @Model.Description</p>
+    </div>
+</div>
+
+<a href="@Url.Action("Index")">Volver</a>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<SakilaApp.Models.Film>
+
+@{
+    ViewData["Title"] = "Películas de Sakila";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a href="@Url.Action("Create")" class="btn btn-primary mb-3">+ Nueva película</a>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Año</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var film in Model)
+        {
+            <tr>
+                <td>@film.FilmId</td>
+                <td>@film.Title</td>
+                <td>@film.ReleaseYear</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = film.FilmId })">Ver</a> |
+                    <a href="@Url.Action("Edit", new { id = film.FilmId })">Editar</a> |
+                    <a href="@Url.Action("Delete", new { id = film.FilmId })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
